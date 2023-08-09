@@ -41,7 +41,7 @@
             function canPay(changeArray, totalDue) {
 
                 if (changeArray.length === 0) {
-                    return "checking.. its empty array Or Not";
+                    return "checking..its empty array Or Not";
                 }
 
                 let totalMoney = 0;
@@ -54,8 +54,7 @@
                         return false;
                     }
             }
-
-           
+ 
             const changeArray= [1, 2, 5];
             const totalDue = 10 ;
             const result = canPay(changeArray, totalDue);

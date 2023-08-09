@@ -14,24 +14,48 @@
 // const result = sortMaker(inputArr);
 // console.log(result);
 
-function sortMaker(arr) {
-    if (arr[0] === arr[1]) {
-        return "equal";
 
 
-    } else {
-        (arr.some(i => i > 0)) 
-         arr.sort ((a, b) => b - a); 
-    }
+            function sortMaker(arr) {
+              
 
-    return arr;
-}
+                  if (arr[1] <= 0 || arr[1] <= 1 ) 
+                    return "Invalid Input";
+               
+                    let equal = true;
+                for (let i = 0; i < arr.length - 1; i++) {
+                    if (arr[i] !== arr[i + 1]) {
+                        equal = false;
+                        break;
+                    }
+                }
 
-var array1 = [2, 3];
-var array2 = [4, 4];
+                if (equal) {
+                    return "equal";
+                }
 
-console.log(sortMaker(array1));
-console.log(sortMaker(array2));
+                const sortedArr = [];
 
+                while (arr.length > 0) {
+                    let max = -Infinity;
+                    let maxIndex = -1;
 
+                    for (let i = 0; i < arr.length; i++) {
+                        if (arr[i] > max) {
+                            max = arr[i];
+                            maxIndex = i;
+                        }
+                    }
+
+                    sortedArr.push(max);
+                    arr.splice(maxIndex, 1);
+                }
+
+                return sortedArr;
+            }
+
+            const inputArray = [4,-2]   ;
+
+            const output = sortMaker(inputArray);
+            console.log(output);
 
